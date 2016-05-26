@@ -6,7 +6,7 @@
   = link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete?" }
 
 %p
-  %h2 Comments:
+  %h2= "Comments (#{@article.comments.count})"
   = render partial: 'comment', collection: @article.comments
 
 %p

@@ -1,13 +1,12 @@
 %h3 Add a Comment
-%p (Comment Form goes here)
 
 = form_for [ @article, @comment], action: "create" do |f|
 
   %p
-    = f.label :author_name
+    = f.label :author_name, "Your Name"
     = f.text_field :author_name
   %p
-    = f.label :body
+    = f.label :body, "Your Comment"
     = f.text_field :body
 
   %p= f.submit
