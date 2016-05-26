@@ -3,8 +3,9 @@
 %ul{ id: "articles" }
   - @articles.each do |article|
     %li
-      = link_to article.title, article_path(article), class: "article_title"
+      = link_to article.title, article_path(article), class: "article_title" 
+%br
 
-%ul{ id: "create_new"}
+%ul{ id: "create"}
   = link_to "Create New Article", new_article_path, class: "article_title"
 
