@@ -1,12 +1,15 @@
 %h1= @article.title
 %p= @article.body
-
-= link_to "<< Back to Article Index!", articles_path
-
 %br
+%p
+  = link_to "Edit", edit_article_path(@article)
+  = link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete?" }
 
-= link_to "Edit", edit_article_path(@article)
+%p
+  %h2 Comments:
+  = render partial: 'comment', collection: @article.comments
 
-= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete?" }
-
-
+%p
+  = render partial: 'comments/form'
+%p
+  = link_to "<< Back to Article Index!", articles_path
