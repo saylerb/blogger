@@ -1,0 +1,16 @@
+%h1 Create a New Article
+
+= form_for @article, action: "create" do |f|
+
+  %ul- 
+    - @article.errors.full_messages.each do |error|
+      %li= error
+
+  %p
+    = f.label :title
+    = f.text_field :title
+  %p
+    = f.label :body
+    = f.text_field :body
+
+  %p= f.submit
